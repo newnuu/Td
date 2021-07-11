@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>도시 정보</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Inline&family=Courgette&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Gugi&family=Hi+Melody&family=Lobster&family=Megrim&family=Monoton&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nosifer&family=Stylish&family=Sunflower:wght@300&family=Vast+Shadow&family=Vibur&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type='text/css' href="static/travel_info.css">
+  <script>
+    function printClock(diff) {
+      var clock = document.getElementById("time");            // 출력할 장소 선택
+      var currentDate = new Date();                                     // 현재시간
+      var amPm = 'AM';
+      var currentHours = addZeros(currentDate.getHours()+diff,2);
+      var currentMinute = addZeros(currentDate.getMinutes() ,2);
+      var currentSeconds =  addZeros(currentDate.getSeconds(),2);
+
+      if(currentHours >= 12){ // 시간이 12보다 클 때 PM으로 세팅, 12를 빼줌
+    	  amPm = 'PM';
+    	  currentHours = addZeros(currentHours - 12,2);
+      }
+      if(currentHours<=0){
+        amPm = 'PM';
+        currentHours = addZeros(int(currentHours) + 12,2);
+      }
+    
+        clock.innerHTML = currentHours+":"+currentMinute+":"+currentSeconds +" <span style='font-size:50px;'>"+ amPm+"</span>"; //날짜를 출력해 줌
+
+        setTimeout("printClock({{diff}})",1000);         // 1초마다 printClock() 함수 호출
+      }
+    function addZeros(num, digit) { // 자릿수 맞춰주기
+	    var zero = '';
+      if (num <0){
+        num = -num;
+      }
+	    num2 = num.toString();
+	    if (num2.length < digit) {
+	      for (i = 0; i < digit - num2.length; i++) {
+	        zero += '0';
+	      } 
+	    }
+	    return zero + num2;
+    }
+  </script>
+</head>
+<br>
+<body onload="printClock({{diff}})">
+  <div class='back'>
+    <input type="button" onclick="location.href='/'" value='BACK'style="width:200px; height:50px; background-color:white; border-radius:20px; font-size:30px; font-family: 'Gaegu', cursive;">
+  `</div>
+  <br>
+  <div class='left'>
+    <span class='weather'>
+      <br>
+      <div class='wtitle'>Weather<br></div>
+      <div class="wtgroup">
+        {% for i in range(0,7) %}
+        <div class='daily {{i}}'>
+          <div class='pic {{i}}'>
+          <img src="{{weather_list[i][1]}}" alt="">
+          </div>
+          <div class='temp {{i}}'>
+
+            {{weather_list[i][2]}}°C / {{weather_list[i][3]}}°C
+          </div>
+          <div class='day {{i}}'>
+            {{weather_list[i][0]}}
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </span>
+    <span class= 'front'>
+      <div class="safe">
+        <br>
+        <div class="safehead">
+          <img src="static\alarm.png" style ="width:35px; height:35px;" alt="">
+          여행경보안내
+          <img src="static\alarm.png" style = "width:35px; height:35px;" alt="">
+        </div>
+        <br>
+        <div class="safetylist">
+          {% for i in range(0,safety_list_len+1) %}
+            {{safety_list[i]}}<br>
+          {% endfor %}
+        </div>
+      <div class='fhead'>
+        COVID-19
+      </div>
+      <div class='covidtext'>
+        확진자수 (사망자수)
+      </div>
+      <div class='covidnum'>
+        {{corona_list[0]}}
+      </div>
+      </div>
+    </span>
+    <span class="name" style="background-image:url('{{flagsrc}}'); background-size:cover; background-repeat: no-repeat;">
+      <br><br>
+      <div class='cntry'>
+        {{cntry}}
+      </div>
+      <div class='city'>
+        {{city}}
+      </div>
+      <div class='engcity'>
+        {{engcity}}
+      </div>
+    </span>
+  </div>
+  <span class= 'right'>
+    <div class='ytvideo'>
+      <br>
+      <div class="vloghead">
+        {{city}} vlog
+        <img src="static\polaroid.png" style ="width:60px; height:60px; vertical-align: text-bottom;" alt="">
+      </div>
+      <br>
+      <div class="vlogcontent">
+        {% for i in range(0,3) %}
+  
+        <div class='vlog {{i}}'>
+          <br>
+          <div class='vlogimg {{i}}'>
+            <iframe style=" width:100%; height:200px;" src="{{vlog_list[i][5]}}" frameborder="0"></iframe>
+          </div>
+          <br>
+          <div class='vlogtitle {{i}}'>
+            <a href="{{vlog_list[i][2]}}">{{vlog_list[i][1]}}</a>
+          </div>
+          <br>
+          <div class='chname {{i}}'>
+            <a href="{{vlog_list[i][4]}}">{{vlog_list[i][3]}}</a>
+          </div>
+          <br>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="t">
+      <br>
+      <div class='thead'>
+      현지시간
+      </div>
+      <div id='time'>
+      </div>
+      <div class='diff'>
+      시차 {{diff}}시간
+      </div>
+    </div>
+  </span>
+ 
+  <br>
+  <div class='bottom'>
+    <div class= 'phead'>
+      가볼만한 곳 Top 5
+    </div>
+    <div class='placegroup'>
+    {% for i in range(0,5)%}
+    <div class= 'place {{i}}'>
+      <div class='cityimg {{i}}'>
+        <img src="{{place_list[i][0]}}" alt="">
+      </div>
+      <div class='placename {{i}}'>
+        <a href="{{place_list[i][2]}}">{{place_list[i][1]}}</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+  <br><br>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Diary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Inline&family=Courgette&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Gugi&family=Hi+Melody&family=Lobster&family=Megrim&family=Monoton&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nosifer&family=Stylish&family=Sunflower:wght@300&family=Vast+Shadow&family=Vibur&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+  <style>
+  body{
+      background: url('static/diarybackground.jpg');
+    }
+  *{
+    margin: 0 auto;
+    text-align:center;
+    font-family: 'Gaegu', cursive;
+    font-size:30px;
+  }
+  p.title {
+    color : white;
+  }
+  input.ip{
+    background-color: transparent;
+    border:transparent;
+    border-bottom: solid white thick;
+  }
+  textarea.ip{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border:unset;
+  }
+  .bt{
+    border-radius: 20px;
+    background-color: wheat;
+    border:unset;
+  }
+  </style>
+</head>
+
+<body>
+  <br>
+ <form action="{{ url_for('diary_list') }}" method="POST" enctype="multipart/form-data">
+  <p class='title'>Date: <input class = 'ip' type="text" id="datepicker" name='date'></p>
+  <br>
+  <p class='title'><span>Title : <input class = 'ip' type='text' name="title" style="width:300px; height:30px;"></p></span>
+  <br>
+  <div id='photo'>
+    <input type="file" name='photofile'><br><br>
+  </div>
+  <textarea class = 'ip' name="diary" rows="15" cols="60"></textarea><br><br>
+  <input class = 'bt' type="button" value='취소' onclick="location.href='/list'">
+  <input class = 'bt' type="submit" value='저장'><br><br>
+<br>
+</body>
+</html>

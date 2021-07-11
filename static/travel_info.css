@@ -1,0 +1,319 @@
+body{
+  display:flex;
+  flex-wrap:wrap ;
+  background: url('static/backgroundimage.jpg');
+  min-height:100%;
+  background-size: cover;
+  width:1300px;
+  height:1000px;
+  margin:5px;
+  /* position:fixed; */
+  overflow:scroll !important;
+}
+.back{
+  width:1260px;
+  text-align: right;
+  float:right;
+}
+.left{
+  float:left;
+  width:830px;
+}
+.t{
+  width:425px;
+  height:200px;
+  margin:3px;
+  float:right;
+  text-align:center;
+  background-color: rgba(243,190,94,0.4);
+  border-radius:10px;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.thead{
+  width:300px;
+  text-align:center;
+  border-radius:30px;
+  margin:0 auto;
+  font-size:38px;
+  border:solid white;
+  font-family: 'Do Hyeon', sans-serif;
+}
+#time{
+  margin:0 auto;
+  font-size:70px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.diff{
+  font-size:30px;
+  margin:0 auto;
+  text-align:center;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.weather{
+  width:800px;
+  height:270px;
+  margin:5px;
+  float:left;
+  padding-left: 5px;
+  padding-right:5px;
+  background-color: rgba(212,244,250,0.6);
+  border-radius:10px;
+}
+.wtitle{
+  width:200px;
+  font-size:30px;
+  text-align: center;
+  margin:2px auto;
+  border-radius: 10px;
+  font-family: 'Monoton', cursive;
+  background-color:#ffffdd;
+}
+.wtgroup{
+  width:780px;
+  margin:0 auto;
+}
+.daily{
+  width:110px;
+  height:180px;
+  float:left;
+  margin:5px auto;
+  background-color: transparent;
+}
+/* .daily.0{
+  border:solid red;
+  border-radius:10px;
+} */
+.pic{
+  width:110px;
+  margin:0 auto;
+  background-color: transparent;
+}
+.temp{
+  width:110px;
+  text-align:center;
+  margin:0 auto;
+  background-color: transparent;
+  font-family: 'Vibur', cursive;
+}
+.day{
+  width:100px;
+  margin:0 auto;
+  text-align:center;
+  border-radius: 15px;
+  background-color:skyblue;
+  font-family: 'Vibur', cursive;
+}
+
+.front{
+  display:flex;
+  flex-direction: column;
+  width:270px;
+  height:370px;
+  float:left;
+  margin:5px;
+  background-color: rgba(243,190,94,0.4);
+  border-radius:10px;
+}
+.safehead{
+  width:250px;
+  margin:0 auto;
+  color:orange;
+  text-align:center;
+  font-size:35px;
+  border:solid white;
+  border-radius:30px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.safehead>img{
+  width:10px;
+  height:10px;
+}
+.safetylist{
+  text-align:center;
+  font-size:30px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.fhead{
+  width:250px;
+  font-size:35px;
+  color:darkred;
+  margin:0 auto;
+  text-align: center;
+  font-family: 'Nosifer', cursive;
+}
+.covidtext{
+  margin:0 auto;
+  width:250px;
+  font-size:20px;
+  text-align:center;
+  color:white;
+  border-radius:20px;
+  background-color:darkslategray;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.covidnum{
+  font-size:30px;
+  text-align:center;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.name{
+  display:flex;
+  flex-direction: column;
+  width:530px;
+  height:370px;
+  float:left;
+  margin:5px;
+  text-align:center;
+  border-radius:10px;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.cntry{
+  font-size:50px;
+  vertical-align: middle;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.city{
+  font-size:100px;
+  vertical-align: middle;
+  background-color: transparent;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.engcity{
+  font-size:60px;
+  vertical-align: middle;
+  background-color: transparent;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.right{
+  float:right;
+  width:430px;
+}
+.ytvideo{
+  width:430px;
+  height:470px;
+  float:right;
+  border-radius:10px;
+  background-color:rgba(245,180,190,0.4);
+}
+.vloghead{
+  width:400px;
+  font-size: 40px;
+  margin:0 auto;
+  text-align: center;
+  font-family: 'Gaegu', cursive;
+  background-image: url(/static/tape2.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius:30px;
+}
+.vlogcontent{
+  width:400px;
+  height:360px;
+  margin:0 auto;
+  background-color: white;
+  overflow-y:scroll;
+}
+.vlog{
+  width:390px;
+  height:350px;
+  margin:0 auto;
+  border: solid rgb(255, 173, 190) 5px;
+}
+.vlogimg{
+  width:360px;
+  height:200px;
+  border: solid black;
+  margin:0 auto;
+}
+.vlogtitle{
+  display:table;
+  width:380px;
+  text-align: center;
+  margin:0 auto;
+  background-color:transparent;
+  color:black;
+  font-size: 17px;
+  border-radius: 20px;
+  font-family: 'Gaegu', cursive;
+}
+.chname{
+  display:table;
+  width:300px;
+  text-align: center;
+  font-size: 19px;
+  vertical-align: middle;
+  margin:0 auto;
+  background-image: url(/static/tape1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Gaegu', cursive;
+}
+a {
+  text-decoration: none;
+ }
+
+.bottom{
+  width:1230px;
+  height:290px;
+  float:left;
+  margin:5px;
+  padding-left: 5px;
+  padding-right:5px;
+  background-color: rgba(137,119,173,0.3);
+  border-radius:10px;
+}
+
+.phead{
+  width:400px;
+  font-size:40px;
+  text-align: center;
+  margin:10px auto;
+  background-image: url(/static/tape3.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius:30px;
+  font-family: 'Gaegu', cursive;
+  /* font-family: 'Do Hyeon', sans-serif; */
+}
+.placegroup{
+  width:900px;
+  margin:0 auto;
+}
+.place{
+  display:table;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  width:173px;
+  float:left;
+  margin:10px auto;
+}
+.cityimg{
+  display:table;
+  text-align: center;
+  vertical-align: middle;
+  width:173px;
+  margin:0 auto;
+  background-color: transparent;
+}
+.cityimg>img{
+  border-radius: 30px;
+  width:163px;
+  height:163px;
+}
+.placename{
+  display:table;
+  width:150px;
+  text-align: center;
+  vertical-align: middle;
+  margin:0 auto;
+  background-color:#ffffdd;
+  color:black;
+  border-radius: 20px;
+  font-family: 'Sunflower', sans-serif;
+}
+

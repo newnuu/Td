@@ -1,0 +1,36 @@
+.body{
+  width:880px;
+}
+.head{
+  width:850px;
+  height:60px;
+  border: solid black;
+}
+.date{
+  width:600px;
+  height:55px;
+  float:left;
+  border-right:solid black;
+}
+.weather{
+  width:230px;
+  height:55px;
+  float:right;
+  border-left: solid blue;
+}
+.photo{
+  width: 850px;
+  height: 400px;
+  border: dashed black;
+}
+.diary{
+  width: 850px;
+  height: 500px;
+  border: solid black;
+}
+.title{
+  width:800px;
+  height:50px;
+  text-align:center;
+  border:solid black;
+}

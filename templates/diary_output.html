@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{row['title']}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Inline&family=Courgette&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Gugi&family=Hi+Melody&family=Lobster&family=Megrim&family=Monoton&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nosifer&family=Stylish&family=Sunflower:wght@300&family=Vast+Shadow&family=Vibur&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <style>
+    body{
+      background: url('static/diarybackground.jpg');
+    }
+    *{
+      margin: 0 auto;
+      text-align:center;
+      font-family: 'Gaegu', cursive;
+      font-size:30px;
+    }
+    .wrap{
+      background-color: rgb(247, 239, 250);
+      width: 900px;
+      border-radius: 10px;
+      border:solid rgb(245, 219, 255);
+    }
+    .head{
+      width:850px;
+      margin:0 auto;
+      font-size:50px;
+    }
+    .date{
+      height:55px;
+      margin:0 auto;
+      font-size:50px;
+      background-color: white;
+      border-radius: 20px;
+    }
+
+    .photo{
+      width: 850px;
+      height: 400px;
+      margin:0 auto;
+      border:solid  rgb(228, 205, 253);
+    }
+    .diary{
+      width: 850px;
+      margin:0 auto;
+      background-color: white;
+      border-radius: 20px;
+    }
+    .title{
+      width: 850px;
+      height:60px;
+      text-align:center;
+      margin:0 auto;
+      font-size:50px;
+      background-color: white;
+      border-radius: 20px;
+    }
+    .bt:hover{
+      background-color: lightyellow;
+    }
+  </style>
+</head>
+<body>
+  <div class='wrap'>
+  <div class='head'>
+    <br>
+    <div class='date'> Date : 
+      {{row['date']}} <br>
+    </div>
+  </div>
+  <br>
+  <div class='photo'>
+    <img src="/static/{{row['photo']}}" alt="" style="width: 850px; height: 400px">
+  </div>
+  <br>
+  <div class='title'>
+    {{row['title']}}
+  </div>
+  <br>
+  <div class="diary">
+    <div class='text'>
+      {{row['diary']}}
+    </div>
+  
+  </div>
+  <br>
+  <input class="bt" type="button" style="border:transparent;border-radius:20px;background-color:rgb(228, 188, 255); "value='확인' onclick="location.href='/list'"><br>
+  <br>
+</div>
+</body>
+</html>

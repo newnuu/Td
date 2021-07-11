@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Inline&family=Courgette&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Gugi&family=Hi+Melody&family=Lobster&family=Megrim&family=Monoton&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nosifer&family=Stylish&family=Sunflower:wght@300&family=Vast+Shadow&family=Vibur&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <style>
+  body{
+    background: url('static/diarybackground.jpg');
+  }
+    .bg{
+      width:250px;
+      height:300px;
+      margin:0 auto;
+      border:solid black;
+      background-color: skyblue;
+    }
+    .photo{
+      width:200px;
+      height:200px;
+      margin:0 auto;
+      border:solid black;
+    }
+    .date{
+      width:200px;
+      height:20px;
+      margin:0 auto;
+      font-family: 'Gaegu', cursive;
+      text-align: right;
+      background-color: transparent;
+    }
+    .title{
+      width:200px;
+      height:30px;
+      margin:0 auto;
+      font-size:20px;
+      text-align: right;
+      font-family: 'Gaegu', cursive;
+      background-color:transparent;
+    }
+    h1{
+      text-align: center;
+      font-family: 'Do Hyeon', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Memories</h1>
+  <div>
+    {% for row in rows %}
+    <br>
+    <div class="bg {{row}}">
+      <br>
+      <div class="photo {{row}}">
+        photo
+        {{row['photo']}}
+      </div>
+      <br>
+      <div class="date {{row}}">
+        {{row['date']}}<br>
+      </div>
+      <div class="title {{row}}">
+        {{row['title']}}
+      </div>
+    </div>
+  </div>
+
+  <thead>
+    <tr>
+      <td>Date</td>
+      <td>Title</td>
+    </tr>
+  </thead>>
+  {% for row in rows %}
+    <tr>
+      <td>{{row['date']}}</td>
+      <td>{{row['title']}}</td>
+    </tr>
+    {% endfor%}
+  </table>
+</body>
+</html>

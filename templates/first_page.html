@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>여행</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Inline&family=Courgette&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Gugi&family=Hi+Melody&family=Lobster&family=Megrim&family=Monoton&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nosifer&family=Stylish&family=Sunflower:wght@300&family=Vast+Shadow&family=Vibur&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <style>
+  body{
+    background: url('static/backgroundimage.jpg');
+      min-height:100%;
+      background-size: cover;
+      width:1000px;
+      text-align:center;
+      vertical-align : middle;
+      margin: 0 auto;
+  } 
+  
+  #content{
+    padding:50px;
+    margin:50px;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+  #info{
+    width : 700px;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+  #diary{
+    width : 800px;
+    margin: 0 auto;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    vertical-align: middle;
+  }
+  #head{
+    font-family: 'Lobster', cursive;
+    font-size:90px;
+    color:white;
+    vertical-align: middle;
+  }
+  img{
+    padding:5px;
+    width:50px;
+    height:50px;
+    margin:0 auto;
+    vertical-align: middle;
+  }
+  button{
+    vertical-align: middle;
+    margin:0 auto;
+    border:solid white;
+    border-radius:30px;
+
+  }
+</style>
+
+</head>
+<body >
+  <head>
+    <br><br><br><br><br><br><br>
+    <div id='head'>Travel</div>
+  </head>
+  <div id='content'>
+  <form action="/search" method='POST'>
+    <div class='search'>
+      <input type="text" name='city' placeholder=" 도시 입력" style="width: 700px; height:40px; font-size: 30px; font-family: 'Sunflower', sans-serif; border-radius:10px; border:none;" >
+      <button type="submit"style="width:60px; height:45px; font-size: 25px; font-family: 'Lobster', cursive; background-color:transparent; color:white;" >GO</button>
+    </div>
+  </form>
+    <br><br><br>
+    <div id='diary'>
+      <Button id='diary' onclick="location.href='/list'" style="width:400px; height:80px; background-color:transparent; color:#FFB2AF;"><img src= {{'static/image5.png'}}>Travel Diary</button>
+    </div>
+    
+    <br>
+</div>
+</body>
+</html>
